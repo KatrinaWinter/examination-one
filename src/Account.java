@@ -1,13 +1,17 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class Account {
     private String owner;
     private double balance;
+    private List<String> history = new ArrayList<>();
 
     //constructor
     public Account(String owner, double initialBalance){
         this.owner = owner;
         this.balance = initialBalance;
         if (initialBalance < 0){
-            this.balance = 0;
+            balance = 0;
         }
     }
 
@@ -24,7 +28,8 @@ public class Account {
             System.out.println("Ogiltig insättning.");
             return;
         }
-        this.balance = this.balance + amount;
+        balance = balance + amount;
+        history.add("Insättning: " + amount + " kr");
     }
 
     public boolean withdraw(double amount) {
@@ -32,12 +37,27 @@ public class Account {
             System.out.println("Ogiltigt uttag.");
             return false;
         }
-        if (amount > this.balance){
+        if (amount > balance){
             System.out.println("Uttag stoppats! för lite pengar.");
             return false;
         }
-        this.balance = this.balance - amount;
+        balance = balance - amount;
+        history.add("Uttag: " + amount + " kr");
         return true;
     }
 
-}
+    public void showHistory() {
+
+                if (history.isEmpty()) {
+                    System.out.println("Inga transaktioner än.");
+                    return;
+                }
+
+        for (int i = 0; i < history.size(); i++) {
+            System.out.println(history.get(i));
+                }
+            }
+        }
+
+
+

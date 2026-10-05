@@ -52,7 +52,16 @@ public class Main {
                 }
                 } else if (choice == 4){ // Lista
                 register.printAll();
-            }else if (choice == 0) { //Avsluta
+            } else if (choice == 5) {
+                System.out.println("Namn: ");
+                String name = scanner.nextLine();
+                Account found = register.findAccount(name);
+                if (found != null){
+                found.showHistory();
+                } else {
+                    System.out.println("Konto saknas: " + name);
+                }
+            }  else if (choice == 0) { //Avsluta
                 System.out.println("Hejdå!");
             } else {
                 System.out.println("Försök igen.");
@@ -65,7 +74,7 @@ public class Main {
     }
 
     public static void showMenu() {
-        System.out.println("1. Skapa konto |  2. Insättning | 3. Uttag | 4. Lista konton |  0. Avsluta");
-        // 5. Historik | 6. Årlig ränta |
+        System.out.println("1. Skapa konto |  2. Insättning | 3. Uttag | 4. Lista konton | 5. Historik |  0. Avsluta");
+        //  6. Årlig ränta |
     }
 }
