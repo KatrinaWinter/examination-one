@@ -6,6 +6,9 @@ public class Account {
     public Account(String owner, double initialBalance){
         this.owner = owner;
         this.balance = initialBalance;
+        if (initialBalance < 0){
+            this.balance = 0;
+        }
     }
 
     public String getOwner() {

@@ -25,9 +25,4 @@ public class AccountRegister {
         }
         return null;
     }
-    /*
-    List<Account>
-    skapa konto
-    lista konton
-    hitta konto*/
 }
