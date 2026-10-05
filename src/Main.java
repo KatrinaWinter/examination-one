@@ -50,7 +50,7 @@ public class Main {
                 } else {
                     System.out.println("Konto saknas: " + name);
                 }
-                } else if (choice == 4){
+                } else if (choice == 4){ // Lista
                 register.printAll();
             }else if (choice == 0) { //Avsluta
                 System.out.println("Hejdå!");

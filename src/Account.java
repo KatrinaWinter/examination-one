@@ -20,6 +20,10 @@ public class Account {
     }
 
     public void deposit(double amount) {
+        if (amount <= 0) {
+            System.out.println("Ogiltig insättning.");
+            return;
+        }
         this.balance = this.balance + amount;
     }
 
