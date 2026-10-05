@@ -1,18 +1,23 @@
 public class Main {
     public static void main(String[] args){
 
-    Account account = new Account("Katrina", 1000);
 
-System.out.println(account.getOwner());
-System.out.println(account.getBalance());
+        AccountRegister register = new AccountRegister();
 
-account.deposit(500);
-System.out.println(account.getBalance());
+        register.createAccount("Katrina", 1000);
+        register.createAccount("Anna", 500);
+        register.createAccount("Lisa", 2000);
 
-account.withdraw(20.50);
-System.out.println(account.getBalance());
+        register.printAll();
 
-account.withdraw(2000);
-System.out.println(account.getBalance());
+        Account account = register.findAccount("Anna");
+
+
+        System.out.println("Hittade: " + account.getOwner());
+        System.out.println("Saldo: " + account.getBalance());
+
+        account = register.findAccount("Peter");
+        System.out.println("Hittade: " + account.getOwner());
+
 }
 }

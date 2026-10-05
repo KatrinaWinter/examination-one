@@ -17,7 +17,7 @@ public class Account {
     }
 
     public void deposit(double amount) {
-        balance = balance + amount;
+        this.balance = this.balance + amount;
     }
 
     public boolean withdraw(double amount) {
@@ -25,11 +25,11 @@ public class Account {
             System.out.println("Ogiltigt uttag.");
             return false;
         }
-        if (amount > balance){
+        if (amount > this.balance){
             System.out.println("Uttag stoppats! för lite pengar.");
             return false;
         }
-        balance = balance - amount;
+        this.balance = this.balance - amount;
         return true;
     }
 
