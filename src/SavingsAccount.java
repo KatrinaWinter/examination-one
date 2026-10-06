@@ -2,24 +2,24 @@ public class SavingsAccount extends Account{
 
     private  double interestRate;
 
-    public SavingsAccount(String owner, double balance, double interestRate) {
+    public SavingsAccount(String owner, double balance) {
         super(owner, balance);
-        this.interestRate = interestRate;
+        this.interestRate = 5;
     }
 
     public double calculateInterest() {
         return getBalance() * interestRate / 100;
     }
 
-    /*public void applyInterest() {
+    public void applyInterest() {
         double interest = calculateInterest();
         deposit(interest);
-    }*/
+    }
 
     @Override
     public void showHistory(){
         super.showHistory();
-        System.out.println("Årlig ränta: " + interestRate + "kr");
+        System.out.println("Årlig ränta: " + interestRate + "%");
     }
 }
 

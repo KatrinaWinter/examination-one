@@ -10,14 +10,14 @@ public class AccountRegister {
     }
 
     public void createSavingsAccount(String owner, double startBalance){
-        Account account = new Account(owner, startBalance);
+        Account account = new SavingsAccount(owner, startBalance);
         accounts.add(account);
     }
 
     public void printAll(){
          for (int i = 0; i < accounts.size(); i++){
            Account a = accounts.get(i);
-             System.out.println(a.getOwner() + ": " + a.getBalance());
+             System.out.println(a.getOwner() + ": " + a.getBalance() + "kr");
          }
     }
 
@@ -33,6 +33,3 @@ public class AccountRegister {
 
 
 }
-/*
-  createSavingsAccount()
- */

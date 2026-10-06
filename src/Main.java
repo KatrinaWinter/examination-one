@@ -24,13 +24,11 @@ public class Main {
                 scanner.nextLine();
                 register.createAccount(name, balance);
                 System.out.println("Kontot skapat.");
-            } else if (choice == 2){ //Skapa Sparkonto
+            }  else if (choice == 2){ //Skapa Sparkonto
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 System.out.println("Startsaldo: ");
                 double balance = scanner.nextInt();
-                System.out.println("Ränta: ");
-                double interestRate = scanner.nextInt();
                 scanner.nextLine();
                 register.createSavingsAccount(name, balance);
                 System.out.println("Sparkontot skapat.");
@@ -62,7 +60,37 @@ public class Main {
                 }
                 } else if (choice == 5){ // Lista
                 register.printAll();
-            } else if (choice == 6) { //Hisorik
+            } else if (choice == 6){ // Visa Ränta
+                System.out.println("Namn: ");
+                String name = scanner.nextLine();
+                Account found = register.findAccount(name);
+                if (found != null) {
+                    if (found instanceof SavingsAccount) {
+                        SavingsAccount savings = (SavingsAccount) found;
+                        System.out.println("Din ränta är: " + savings.calculateInterest());
+                    }else {
+                        System.out.println("Detta konto är inte ett Sparkonto: " + name);
+                    }
+                }else {
+                    System.out.println("Konto saknas: " + name);
+                    }
+            } else if (choice == 7){ // Lägg till Ränta
+                System.out.println("Namn: ");
+                String name = scanner.nextLine();
+                Account found = register.findAccount(name);
+                if (found != null) {
+                    if (found instanceof SavingsAccount) {
+                        SavingsAccount savings = (SavingsAccount) found;
+                        System.out.println("Din ränta är: " + savings.calculateInterest());
+                        savings.applyInterest();
+                        System.out.println("Nytt saldo: " + found.getBalance());
+                    }else {
+                        System.out.println("Detta konto är inte ett Sparkonto: " + name);
+                    }
+                }else {
+                    System.out.println("Konto saknas: " + name);
+                }
+            } else if (choice == 8) { //Hisorik
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -80,11 +108,15 @@ public class Main {
 
 }
     public static void showWelcome() {
+        System.out.println("");
         System.out.println("--- VÄLKOMMEN TILL BANKOMATEN ---");
+        System.out.println("");
     }
 
     public static void showMenu() {
-        System.out.println("1. Skapa konto |  2. Skapa sparkonto | 3. Insättning | 4. Uttag |  5. Lista konton | 6. Historik |  0. Avsluta");
-        //  0. Årlig ränta |
+        System.out.println("1. Skapa konto  | 2. Skapa Sparkonto |3. Insättning     | 4. Uttag  ");
+        System.out.println("5. Lista Konton | 6. Visa Ränta      |7. Läg till Ränta | 8. Historik ");
+        System.out.println("0. Avsluta");
+        //
     }
 }
