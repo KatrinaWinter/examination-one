@@ -9,6 +9,11 @@ public class AccountRegister {
          accounts.add(account);
     }
 
+    public void createSavingsAccount(String owner, double startBalance){
+        Account account = new Account(owner, startBalance);
+        accounts.add(account);
+    }
+
     public void printAll(){
          for (int i = 0; i < accounts.size(); i++){
            Account a = accounts.get(i);
@@ -28,3 +33,6 @@ public class AccountRegister {
 
 
 }
+/*
+  createSavingsAccount()
+ */

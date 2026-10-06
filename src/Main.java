@@ -20,11 +20,21 @@ public class Main {
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 System.out.println("Startsaldo: ");
-                int balance = scanner.nextInt();
+                double balance = scanner.nextInt();
                 scanner.nextLine();
                 register.createAccount(name, balance);
                 System.out.println("Kontot skapat.");
-            } else if (choice == 2) { //Insättning
+            } else if (choice == 2){ //Skapa Sparkonto
+                System.out.println("Namn: ");
+                String name = scanner.nextLine();
+                System.out.println("Startsaldo: ");
+                double balance = scanner.nextInt();
+                System.out.println("Ränta: ");
+                double interestRate = scanner.nextInt();
+                scanner.nextLine();
+                register.createSavingsAccount(name, balance);
+                System.out.println("Sparkontot skapat.");
+            } else if (choice == 3) { //Insättning
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -37,7 +47,7 @@ public class Main {
             } else {
                     System.out.println("Konto saknas: " + name);
                 }
-            }else if (choice == 3) { //Uttag
+            }else if (choice == 4) { //Uttag
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -50,9 +60,9 @@ public class Main {
                 } else {
                     System.out.println("Konto saknas: " + name);
                 }
-                } else if (choice == 4){ // Lista
+                } else if (choice == 5){ // Lista
                 register.printAll();
-            } else if (choice == 5) {
+            } else if (choice == 6) { //Hisorik
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -74,7 +84,7 @@ public class Main {
     }
 
     public static void showMenu() {
-        System.out.println("1. Skapa konto |  2. Insättning | 3. Uttag | 4. Lista konton | 5. Historik |  0. Avsluta");
-        //  6. Årlig ränta |
+        System.out.println("1. Skapa konto |  2. Skapa sparkonto | 3. Insättning | 4. Uttag |  5. Lista konton | 6. Historik |  0. Avsluta");
+        //  0. Årlig ränta |
     }
 }
