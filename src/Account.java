@@ -6,7 +6,7 @@ public class Account {
     private double balance;
     private List<String> history = new ArrayList<>();
 
-    //constructor
+
     public Account(String owner, double initialBalance){
         this.owner = owner;
         this.balance = initialBalance;

@@ -22,7 +22,7 @@ public class Main {
                 continue;
             }
 
-            if (choice == 1){ //Skapa konto
+            if (choice == 1){
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
 
@@ -34,7 +34,7 @@ public class Main {
                 System.out.println("Kontot skapat: " + name
                         + " Startsaldo: " + found.getBalance() + " kr ");
                 System.out.println();
-            }  else if (choice == 2){ //Skapa Sparkonto
+            }  else if (choice == 2){
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
 
@@ -47,7 +47,7 @@ public class Main {
                         + " Startsaldo: " + found.getBalance() + " kr "
                         + "Ränta: " + savings.getInterestRate() + "%");
                 System.out.println();
-            } else if (choice == 3) { //Insättning
+            } else if (choice == 3) {
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
 
@@ -60,7 +60,7 @@ public class Main {
             } else {
                     System.out.println("Konto saknas: " + name);
                 }
-            }else if (choice == 4) { //Uttag
+            }else if (choice == 4) {
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
 
@@ -73,9 +73,9 @@ public class Main {
                 } else {
                     System.out.println("Konto saknas: " + name);
                 }
-                } else if (choice == 5){ // Lista
+                } else if (choice == 5){
                 register.printAll();
-            } else if (choice == 6){ // Visa Ränta
+            } else if (choice == 6){
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -90,7 +90,7 @@ public class Main {
                 }else {
                     System.out.println("Konto saknas: " + name);
                     }
-            } else if (choice == 7){ // Lägg till Ränta
+            } else if (choice == 7){
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -106,7 +106,7 @@ public class Main {
                 }else {
                     System.out.println("Konto saknas: " + name);
                 }
-            } else if (choice == 8) { //Hisorik
+            } else if (choice == 8) {
                 System.out.println("Namn: ");
                 String name = scanner.nextLine();
                 Account found = register.findAccount(name);
@@ -116,7 +116,7 @@ public class Main {
                 } else {
                     System.out.println("Konto saknas: " + name);
                 }
-            }  else if (choice == 0) { //Avsluta
+            }  else if (choice == 0) {
                 System.out.println("Hejdå!");
             } else {
                 System.out.println("Försök igen! Ange en siffra från menyn.");
@@ -125,9 +125,9 @@ public class Main {
 
 }
     public static void showWelcome() {
-        System.out.println("");
+        System.out.println();
         System.out.println("--- VÄLKOMMEN TILL BANKOMATEN ---");
-        System.out.println("");
+        System.out.println();
     }
 
     public static void showMenu() {
