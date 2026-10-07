@@ -7,6 +7,10 @@ public class SavingsAccount extends Account{
         this.interestRate = 5;
     }
 
+    public double getInterestRate() {
+        return interestRate;
+    }
+
     public double calculateInterest() {
         return getBalance() * interestRate / 100;
     }
@@ -22,9 +26,3 @@ public class SavingsAccount extends Account{
         System.out.println("Årlig ränta: " + interestRate + "%");
     }
 }
-
-/*
-
-    extends Account
-├── interestRate
-└── applyInterest()*/

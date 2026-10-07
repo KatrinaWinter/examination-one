@@ -9,15 +9,22 @@ public class AccountRegister {
          accounts.add(account);
     }
 
-    public void createSavingsAccount(String owner, double startBalance){
-        Account account = new SavingsAccount(owner, startBalance);
+    public SavingsAccount createSavingsAccount(String owner, double startBalance) {
+        SavingsAccount account = new SavingsAccount(owner, startBalance);
         accounts.add(account);
+        return account;
     }
 
     public void printAll(){
          for (int i = 0; i < accounts.size(); i++){
            Account a = accounts.get(i);
-             System.out.println(a.getOwner() + ": " + a.getBalance() + "kr");
+             if (a instanceof SavingsAccount) {
+                 SavingsAccount savings = (SavingsAccount) a;
+                 System.out.println("Sparkonto - " + a.getOwner() + ": " + a.getBalance() + "kr, Ränta: "
+                         + savings.getInterestRate() + "%");
+             } else {
+                 System.out.println("Vanligt konto - " + a.getOwner() + ": " + a.getBalance() + "kr");
+             }
          }
     }
 
