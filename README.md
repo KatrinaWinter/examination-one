@@ -1,4 +1,4 @@
-
+https://funet-my.sharepoint.com/personal/3kdyhapp26_wintka_folkuniversitetet_nu/_layouts/15/stream.aspx?id=%2Fpersonal%2F3kdyhapp26%5Fwintka%5Ffolkuniversitetet%5Fnu%2FDocuments%2FInspelningar%2FMeeting%20with%20Katrina%20Winter%20APP26%2D20261009%5F112237%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E91b78fad%2D9586%2D45c3%2Db97f%2D1aa4cdd7e8b4
 
 1. Datasäkerhet / Inkapsling
 Jag har gjort owner, balance och history private i Account, så
